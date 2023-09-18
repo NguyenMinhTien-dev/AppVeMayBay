@@ -19,7 +19,7 @@ public class MenuAdapter extends BaseAdapter {
         this.context = context;
         this.layout = R.layout.item_sanpham;
         list.add(new ItemMenu(R.drawable.baseline_home_24,"Home"));
-        list.add(new ItemMenu(R.drawable.product,"Product"));
+        list.add(new ItemMenu(R.drawable.product,"Airline tickets"));
         list.add(new ItemMenu(R.drawable.introduce,"About us"));
         if (StatusLogin.login){
             list.add(new ItemMenu(R.drawable.baseline_logout_24,"Exit, " + StatusLogin.user));

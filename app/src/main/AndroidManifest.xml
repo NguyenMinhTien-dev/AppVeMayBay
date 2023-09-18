@@ -17,9 +17,14 @@
         android:theme="@style/Theme.BanVeMayBay"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ChiTietVeActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/circle_shape" />
+
         <activity
             android:name=".DangKyDangNhapActivity"
             android:exported="false" />

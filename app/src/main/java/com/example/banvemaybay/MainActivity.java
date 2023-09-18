@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -28,6 +31,7 @@ import java.util.TimerTask;
 import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
+    DatabaseHelper db;
     StatusLogin status;
     private ViewPager viewPager;
     private CircleIndicator circleIndicator;
@@ -43,12 +47,21 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ListView lvManHinhChinh;
     MenuAdapter adapter = new MenuAdapter(this);
-//    List<VeMayBay> mangSpMoi = new ArrayList<VeMayBay>();
+    List<VeMayBayMoi> vemaybay = new ArrayList<VeMayBayMoi>();
+    VeMayBayAdapter VMBAdapter;
     RecyclerView recyclerVemaybay;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AllProduct();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = new DatabaseHelper(this, "DBVeMayBay.sqlite", null, 1);
 
         toolbar = (Toolbar) findViewById(R.id.toolbarManhinhChinh);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
@@ -169,5 +182,32 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+    }
+
+    private void AllProduct(){
+        Cursor listVeMayBay = db.GetData(
+                "SELECT* FROM VEMAYBAY"
+        );
+        if (vemaybay != null){
+            vemaybay.removeAll(vemaybay);
+        }
+        int quantitySP = 5;
+        while (listVeMayBay.moveToNext() && quantitySP > 0){
+            vemaybay.add(new VeMayBayMoi(
+                    listVeMayBay.getString(0),
+                    listVeMayBay.getString(1),
+                    listVeMayBay.getString(2),
+                    listVeMayBay.getInt(3),
+                    listVeMayBay.getString(4),
+                    listVeMayBay.getString(5),
+                    listVeMayBay.getLong(6),
+                    listVeMayBay.getInt(7)
+            ));
+            quantitySP--;
+        }
+        VMBAdapter = new VeMayBayAdapter( this, vemaybay);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewManHinhChinh.setAdapter(VMBAdapter);
+        recyclerViewManHinhChinh.setLayoutManager(layoutManager);
     }
 }
