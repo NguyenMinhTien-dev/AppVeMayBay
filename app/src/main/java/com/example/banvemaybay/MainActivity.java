@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 3:
-                        Intent dangxuat = new Intent(getApplicationContext(), DangKyDangNhapActivity.class);
+                        Intent dangxuat = new Intent(getApplicationContext(), DangNhapActivity.class);
                         startActivity(dangxuat);
                         break;
                 }

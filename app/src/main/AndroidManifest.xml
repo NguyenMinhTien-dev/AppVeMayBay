@@ -18,6 +18,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".QLHoaDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QLVeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QLAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DangKyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DangNhapActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChiTietVeActivity"
             android:exported="false" />
 
@@ -25,9 +46,6 @@
             android:name="com.google.android.actions"
             android:resource="@drawable/circle_shape" />
 
-        <activity
-            android:name=".DangKyDangNhapActivity"
-            android:exported="false" />
         <activity
             android:name=".GioiThieuActivity"
             android:exported="false" />

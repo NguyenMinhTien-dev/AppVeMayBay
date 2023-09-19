@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginTop="5dp"
-                    android:text="            CÔNG TY CỔ PHẦN HÀNG KHÔNG VIETJET \n      Đường Trường Sa, Phường 2, Quận Tân Bình, TP. Hồ Chí Minh. \n             Điện thoại: 028 3848 5383."
+                    android:text="            CÔNG TY CỔ PHẦN HÀNG KHÔNG VIETJET \n      Đường Trường Sa, Phường 2, Quận Tân Bình, TP. Hồ Chí Minh.  \n           airlinecenter@gmail.com \n             Điện thoại: 028 3848 5383."
                     android:textStyle="bold"
                     android:textSize="12dp"
                     android:textColor="@color/white"/>
