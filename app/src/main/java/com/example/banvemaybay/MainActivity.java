@@ -186,12 +186,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void AllProduct(){
         Cursor listVeMayBay = db.GetData(
-                "SELECT* FROM VEMAYBAY"
+                "SELECT* FROM SANPHAM"
         );
         if (vemaybay != null){
             vemaybay.removeAll(vemaybay);
         }
-        int quantitySP = 5;
+        int quantitySP = 8;
         while (listVeMayBay.moveToNext() && quantitySP > 0){
             vemaybay.add(new VeMayBayMoi(
                     listVeMayBay.getString(0),
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
             quantitySP--;
         }
         VMBAdapter = new VeMayBayAdapter( this, vemaybay);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewManHinhChinh.setAdapter(VMBAdapter);
         recyclerViewManHinhChinh.setLayoutManager(layoutManager);
     }

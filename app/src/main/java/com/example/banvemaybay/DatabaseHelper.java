@@ -79,9 +79,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //region Tạo bảng SẢN PHẨM: Lưu trữ sản phẩm (hoa)
         db.execSQL(
-                "CREATE TABLE IF NOT EXISTS VEMAYBAY (\n" +
-                        "MAVE VARCHAR PRIMARY KEY NOT NULL,\n" +
-                        "TENVE VARCHAR NOT NULL, \n" +
+                "CREATE TABLE IF NOT EXISTS SANPHAM (\n" +
+                        "MASP VARCHAR PRIMARY KEY NOT NULL,\n" +
+                        "TENSP VARCHAR NOT NULL, \n" +
                         "PHANLOAI VARCHAR NOT NULL, \n" +
                         "SOLUONG INTEGER NOT NULL,\n" +
                         "NOIDEN VARCHAR NOT NULL,\n" +
@@ -92,18 +92,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         ");"
         );
 
-        db.execSQL("Insert into VEMAYBAY values \n" +
+        db.execSQL("Insert into SANPHAM values \n" +
                 "('VNAL001', 'Vé Máy Bay Khứ Hồi Từ Hà Nội Đi Chu Lai', 'Vietnam Airlines', 5, 'Hà Nội -> Chu Lai - 07h00 - 15/11/20223', 'Chu Lai -> Hà Nội - 15h00 - 18/11/2023 ', 9500000, "+R.drawable.vietnamairline+"), \n " +
-                "('VJA001', 'Vé Máy Bay Từ Đã Nẵng Đi Cần Thơ', 'VietJet Air', 4, 'Đà Nẵng -> Cần Thơ - 13h15 - 15/12/2023', '', 2338000, "+R.drawable.vietjetair+"), \n" +
+                "('VJA001', 'Vé Máy Bay Từ Đã Nẵng Đi Cần Thơ', 'Vietjet Air', 4, 'Đà Nẵng -> Cần Thơ - 13h15 - 15/12/2023', '', 2338000, "+R.drawable.vietjetair+"), \n" +
                 "('BBA001', 'Vé Máy Bya Khứ Hồi Từ Hồ Chí Minh Đi Hà Nội', 'Bamboo Airways', 1, 'Hồ Chí Minh -> Hà Nội - 05h55 - 20/09/2023', 'Hà Nội -> Hồ Chí Minh - 10h35 - 24/09/2023', 2049000, "+R.drawable.bamboo+"), \n" +
                 "('VNAL002', 'Vé Máy Bay Từ Buôn Ma Thuột Đi Huế', 'Vietnam Airlines', 3, 'Buôn Ma Thuột -> Huế 20/09/2023', ' ', 2292000, "+R.drawable.vietnamairline+"),  \n" +
                 "('BBA002', 'Vé Máy Bay Từ Đà Nẵng Đi Đà Lạt', 'Bamboo Airways', 1, 'Đã Nẵng -> Đà Lạt - 08h05 - 03/10/2023', ' ', 1110000, "+R.drawable.bamboo+"),  \n" +
-                "('VJA002', 'Vé Máy May Khứ Hồi Từ Pleiku Đi Vinh', 'VietJet Air', 3, 'Pleiku -> Vinh - 18h00 - 01/10/2023', 'Vinh -> Pleiku - 04h00 - 05/10/2023', 6500000, "+R.drawable.vietjetair+"),  \n" +
+                "('VJA002', 'Vé Máy May Khứ Hồi Từ Pleiku Đi Vinh', 'Vietjet Air', 3, 'Pleiku -> Vinh - 18h00 - 01/10/2023', 'Vinh -> Pleiku - 04h00 - 05/10/2023', 6500000, "+R.drawable.vietjetair+"),  \n" +
                 "('VNAL003', 'Vé Máy Bay Khứ Hồi Từ Quy Nhơn Đi Hải Phòng', 'Vietnam Airlines', 6, 'Quy Nhơn -> Hải Phòng 27/09/2023', 'Hải Phòng -> Quy Nhơn 30/09/2023', 7855000, "+R.drawable.vietnamairline+"),  \n" +
-                "('VJA003', 'Vé Máy Bay Từ Hà Nội Đi Phú Quốc', 'VietJet Air', 2, 'Hà Nội -> Phú Quốc - 14h45 - 21/12/2023', '', 3838000, "+R.drawable.vietjetair+"),  \n" +
+                "('VJA003', 'Vé Máy Bay Từ Hà Nội Đi Phú Quốc', 'Vietjet Air', 2, 'Hà Nội -> Phú Quốc - 14h45 - 21/12/2023', '', 3838000, "+R.drawable.vietjetair+"),  \n" +
                 "('BBA003', 'Vé Máy Bay Khứ Hồi Từ Buôn Ma Thuột đi Hồ Chí Minh', 'Bamboo Airways', 3, 'Buồn Ma Thuột -> Hồ Chí Minh - 18h10 -17/10/2023', 'Hồ Chí Minh -> Buôn Ma Thuột - 07h00 - 18/10/2023', 1080000, "+R.drawable.bamboo+"),  \n" +
                 "('VNAL004', 'Vé Máy Bay Từ Thanh Hóa Đi Cà Mau', 'Vietnam Airlines', 2, 'Thanh Hóa -> Cà Mau 23/09/2023', ' ', 3902000, "+R.drawable.vietnamairline+"),  \n" +
-                "('VJA004', 'Vé Máy Bay Từ Đà Lạt Đi Vinh', 'VietJet Air', 0, 'Đà Lạt -> Vinh - 10h15 - 07/11/2023', '', 2176000, "+R.drawable.vietjetair+"),  \n" +
+                "('VJA004', 'Vé Máy Bay Từ Đà Lạt Đi Vinh', 'Vietjet Air', 0, 'Đà Lạt -> Vinh - 10h15 - 07/11/2023', '', 2176000, "+R.drawable.vietjetair+"),  \n" +
                 "('BBA004', 'Vé Máy Bay Từ Cần THơ Đi Phú Quốc', 'Bamboo Airways', 10, 'Cần Thơ -> Phú Quốc - 12h35 - 02/12/2023', '', 1626000, "+R.drawable.bamboo+");");
 
         //region Tạo bảng BILL: Lưu trữ các hóa đơn của người mua

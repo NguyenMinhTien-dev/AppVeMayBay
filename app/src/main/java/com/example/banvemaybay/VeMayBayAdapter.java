@@ -37,7 +37,7 @@ public class VeMayBayAdapter extends RecyclerView.Adapter<VeMayBayAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         VeMayBayMoi vemaybayMoi = array.get(position);
 
-        holder.tensp.setText(vemaybayMoi.getTENVE());
+        holder.tensp.setText(vemaybayMoi.getTENSP());
         holder.NoiDen.setText(vemaybayMoi.getNOIDEN());
         holder.NoiVe.setText(vemaybayMoi.getNOIVE());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");

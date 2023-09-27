@@ -3,14 +3,14 @@ package com.example.banvemaybay;
 import java.io.Serializable;
 
 public class VeMayBayMoi implements Serializable {
-    String MAVE, TENVE, PHANLOAI, NOIDEN, NOIVE;
+    String MASP, TENSP, PHANLOAI, NOIDEN, NOIVE;
     Integer SOLUONG, HINHANH;
     Long DONGIA;
 
     public VeMayBayMoi(){ }
-    public VeMayBayMoi(String MAVE, String TENVE, String PHANLOAI, Integer SOLUONG, String NOIDEN, String NOIVE, Long DONGIA, Integer HINHANH) {
-        this.MAVE = MAVE;
-        this.TENVE = TENVE;
+    public VeMayBayMoi(String MASP, String TENSP, String PHANLOAI, Integer SOLUONG, String NOIDEN, String NOIVE, Long DONGIA, Integer HINHANH) {
+        this.MASP = MASP;
+        this.TENSP = TENSP;
         this.PHANLOAI = PHANLOAI;
         this.NOIDEN = NOIDEN;
         this.NOIVE = NOIVE;
@@ -21,20 +21,20 @@ public class VeMayBayMoi implements Serializable {
     }
 
 
-    public String getMAVE() {
-        return MAVE;
+    public String getMASP() {
+        return MASP;
     }
 
-    public void setMAVE(String MAVE) {
-        this.MAVE = MAVE;
+    public void setMASP(String MASP) {
+        this.MASP = MASP;
     }
 
-    public String getTENVE() {
-        return TENVE;
+    public String getTENSP() {
+        return TENSP;
     }
 
-    public void setTENVE(String TENVE) {
-        this.TENVE = TENVE;
+    public void setTENSP(String TENSP) {
+        this.TENSP = TENSP;
     }
 
     public String getPHANLOAI() {
